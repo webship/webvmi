@@ -1,0 +1,65 @@
+# Featured card - medium: the fields laid out with Display Builder, without components.
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.featured_card_medium
+    - field.field.node.CONTENT_TYPE_NAME.DESCRIPTION_FIELD_NAME
+    - field.field.node.CONTENT_TYPE_NAME.MEDIA_FIELD_NAME
+    - node.type.CONTENT_TYPE_NAME
+  module:
+    - display_builder
+    - image
+    - text
+third_party_settings:
+  display_builder:
+    profile: default
+    sources:
+      - source_id: entity_field
+        source:
+          derivable_context: 'field:node:CONTENT_TYPE_NAME:MEDIA_FIELD_NAME'
+          'field:node:CONTENT_TYPE_NAME:MEDIA_FIELD_NAME':
+            value:
+              sources:
+                - source_id: 'field_formatter:node:CONTENT_TYPE_NAME:MEDIA_FIELD_NAME'
+                  source:
+                    type: image
+                    label: hidden
+                    settings:
+                      image_link: content
+                      image_style: large
+                      image_loading:
+                        attribute: lazy
+                    third_party_settings: {  }
+      - source_id: entity_field
+        source:
+          derivable_context: 'field:node:CONTENT_TYPE_NAME:title'
+          'field:node:CONTENT_TYPE_NAME:title':
+            value:
+              sources:
+                - source_id: 'field_formatter:node:CONTENT_TYPE_NAME:title'
+                  source:
+                    type: string
+                    label: hidden
+                    settings:
+                      link_to_entity: true
+                    third_party_settings: {  }
+      - source_id: entity_field
+        source:
+          derivable_context: 'field:node:CONTENT_TYPE_NAME:DESCRIPTION_FIELD_NAME'
+          'field:node:CONTENT_TYPE_NAME:DESCRIPTION_FIELD_NAME':
+            value:
+              sources:
+                - source_id: 'field_formatter:node:CONTENT_TYPE_NAME:DESCRIPTION_FIELD_NAME'
+                  source:
+                    type: text_summary_or_trimmed
+                    label: hidden
+                    settings:
+                      trim_length: 150
+                    third_party_settings: {  }
+id: node.CONTENT_TYPE_NAME.featured_card_medium
+targetEntityType: node
+bundle: CONTENT_TYPE_NAME
+mode: featured_card_medium
+content: {  }
+hidden: {  }

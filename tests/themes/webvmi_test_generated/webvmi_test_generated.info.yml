@@ -1,0 +1,7 @@
+name: 'Webvmi test generated theme'
+type: theme
+description: 'A theme generated from the webvmi test theme, used by the webvmi tests.'
+core_version_requirement: ^11.4 || ^12
+base theme: false
+hidden: true
+generator: 'webvmi_test_theme:1.0.0'

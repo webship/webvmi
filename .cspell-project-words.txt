@@ -1,0 +1,5 @@
+# List of words excluded from cspell validation for the Web View Modes Inventory project.
+# Mostly contains custom names: view mode sizes, project and maintainer names.
+Natshah
+Webship
+xlarge

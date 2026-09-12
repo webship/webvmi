@@ -1,0 +1,76 @@
+# Text card - medium. Card with a shadow: h3 title, body trimmed to 200 characters.
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.text_card_medium
+    - field.field.node.CONTENT_TYPE_NAME.DESCRIPTION_FIELD_NAME
+    - node.type.CONTENT_TYPE_NAME
+  module:
+    - display_builder
+    - text
+    - ui_patterns
+third_party_settings:
+  display_builder:
+    profile: default
+    sources:
+      - source_id: component
+        source:
+          component:
+            component_id: 'ui_suite_bootstrap:card'
+            variant_id: null
+            props:
+              attributes:
+                source_id: attributes
+                source:
+                  value: 'class="shadow-sm"'
+            slots:
+              content:
+                sources:
+                  - source_id: component
+                    source:
+                      component:
+                        component_id: 'ui_suite_bootstrap:card_body'
+                        variant_id: null
+                        props:
+                          heading_level:
+                            source_id: select
+                            source:
+                              value: 3
+                        slots:
+                          title:
+                            sources:
+                              - source_id: entity_field
+                                source:
+                                  derivable_context: 'field:node:CONTENT_TYPE_NAME:title'
+                                  'field:node:CONTENT_TYPE_NAME:title':
+                                    value:
+                                      sources:
+                                        - source_id: 'field_formatter:node:CONTENT_TYPE_NAME:title'
+                                          source:
+                                            type: string
+                                            label: hidden
+                                            settings:
+                                              link_to_entity: true
+                                            third_party_settings: {  }
+                          content:
+                            sources:
+                              - source_id: entity_field
+                                source:
+                                  derivable_context: 'field:node:CONTENT_TYPE_NAME:DESCRIPTION_FIELD_NAME'
+                                  'field:node:CONTENT_TYPE_NAME:DESCRIPTION_FIELD_NAME':
+                                    value:
+                                      sources:
+                                        - source_id: 'field_formatter:node:CONTENT_TYPE_NAME:DESCRIPTION_FIELD_NAME'
+                                          source:
+                                            type: text_summary_or_trimmed
+                                            label: hidden
+                                            settings:
+                                              trim_length: 200
+                                            third_party_settings: {  }
+id: node.CONTENT_TYPE_NAME.text_card_medium
+targetEntityType: node
+bundle: CONTENT_TYPE_NAME
+mode: text_card_medium
+content: {  }
+hidden: {  }

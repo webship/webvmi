@@ -1,0 +1,6 @@
+name: 'Webvmi test sub-theme'
+type: theme
+description: 'A sub-theme of the webvmi test theme, used by the webvmi tests.'
+core_version_requirement: ^11.4 || ^12
+base theme: webvmi_test_theme
+hidden: true

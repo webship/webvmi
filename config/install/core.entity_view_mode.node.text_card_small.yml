@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.text_card_small
+label: 'Text card - small'
+description: ''
+targetEntityType: node
+cache: true

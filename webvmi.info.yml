@@ -1,0 +1,9 @@
+name: 'Web View Modes Inventory'
+type: module
+description: 'A set of card view modes (impressed, featured, text, overlay and hero cards) laid out with Display Builder, for any theme.'
+package: Webship
+core_version_requirement: ^11.4 || ^12
+dependencies:
+  - drupal:node
+  - drupal:user
+  - display_builder:display_builder_entity_view

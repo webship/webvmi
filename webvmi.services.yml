@@ -1,0 +1,5 @@
+services:
+  webvmi.factory:
+    class: Drupal\webvmi\ViewModesInventoryFactory
+    autowire: true
+  Drupal\webvmi\ViewModesInventoryFactory: '@webvmi.factory'

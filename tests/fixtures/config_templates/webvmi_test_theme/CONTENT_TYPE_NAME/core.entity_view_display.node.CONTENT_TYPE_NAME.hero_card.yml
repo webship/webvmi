@@ -1,0 +1,35 @@
+# Hero card: the title in a hero component of the theme, shipped by a module.
+langcode: en
+status: true
+third_party_settings:
+  display_builder:
+    profile: default
+    sources:
+      - source_id: component
+        source:
+          component:
+            component_id: 'DEFAULT_ACTIVE_THEME:hero'
+            variant_id: null
+            props: {  }
+            slots:
+              content:
+                sources:
+                  - source_id: entity_field
+                    source:
+                      derivable_context: 'field:node:CONTENT_TYPE_NAME:title'
+                      'field:node:CONTENT_TYPE_NAME:title':
+                        value:
+                          sources:
+                            - source_id: 'field_formatter:node:CONTENT_TYPE_NAME:title'
+                              source:
+                                type: string
+                                label: hidden
+                                settings:
+                                  link_to_entity: true
+                                third_party_settings: {  }
+id: node.CONTENT_TYPE_NAME.hero_card
+targetEntityType: node
+bundle: CONTENT_TYPE_NAME
+mode: hero_card
+content: {  }
+hidden: {  }

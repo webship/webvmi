@@ -1,6 +1,33 @@
 {
-    "name": "drupal/webvmi",
-    "type": "drupal-module",
-    "description": "Card view modes laid out with Display Builder.",
-    "license": "GPL-2.0-or-later"
+  "name": "drupal/webvmi",
+  "description": "Web View Modes Inventory: a set of card view modes (impressed, featured, text, overlay and hero cards) laid out with Display Builder and the components of the default theme. Part of Webship: the UI Suite UIkit theme (UIkit and HTMX) on top of Drupal and Display Builder.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://www.drupal.org/project/webvmi",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Webship",
+      "homepage": "https://webship.co",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/webvmi",
+    "source": "https://git.drupalcode.org/project/webvmi"
+  },
+  "repositories": {
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  },
+  "require": {
+    "drupal/core": "^11.4 || ^12",
+    "drupal/display_builder": "^1.0@beta",
+    "drupal/ui_patterns": "^2.0"
+  },
+  "suggest": {
+    "drupal/ui_suite_uikit": "Lays the view modes out with the UIkit card, overlay, cover and article components."
+  }
 }

@@ -1,0 +1,41 @@
+# The view modes of the Web View Modes Inventory. Each one has a Display
+# Builder template: core.entity_view_display.node.CONTENT_TYPE_NAME.<view mode>.yml
+view_modes:
+  full:
+    label: Full
+  card:
+    label: Card
+  impressed_card_xlarge:
+    label: 'Impressed card - xlarge'
+  impressed_card_large:
+    label: 'Impressed card - large'
+  impressed_card_medium:
+    label: 'Impressed card - medium'
+  impressed_card_small:
+    label: 'Impressed card - small'
+  impressed_card_xsmall:
+    label: 'Impressed card - xsmall'
+  featured_card_xlarge:
+    label: 'Featured card - xlarge'
+  featured_card_large:
+    label: 'Featured card - large'
+  featured_card_medium:
+    label: 'Featured card - medium'
+  featured_card_small:
+    label: 'Featured card - small'
+  featured_card_xsmall:
+    label: 'Featured card - xsmall'
+  text_card_large:
+    label: 'Text card - large'
+  text_card_medium:
+    label: 'Text card - medium'
+  text_card_small:
+    label: 'Text card - small'
+  overlay_card_xlarge:
+    label: 'Overlay card - xlarge'
+  overlay_card_large:
+    label: 'Overlay card - large'
+  overlay_card_medium:
+    label: 'Overlay card - medium'
+  hero_card:
+    label: 'Hero card'

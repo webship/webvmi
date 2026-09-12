@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.featured_card_medium
+label: 'Featured card - medium'
+description: ''
+targetEntityType: node
+cache: true

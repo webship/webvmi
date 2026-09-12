@@ -1,0 +1,76 @@
+# Full. Prose: the date, the image and the body.
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.CONTENT_TYPE_NAME.DESCRIPTION_FIELD_NAME
+    - field.field.node.CONTENT_TYPE_NAME.MEDIA_FIELD_NAME
+    - node.type.CONTENT_TYPE_NAME
+  module:
+    - display_builder
+    - image
+    - text
+    - ui_patterns
+third_party_settings:
+  display_builder:
+    profile: default
+    sources:
+      - source_id: component
+        source:
+          component:
+            component_id: 'ui_suite_daisyui:prose'
+            variant_id: null
+            props: {  }
+            slots:
+              content:
+                sources:
+                  - source_id: entity_field
+                    source:
+                      derivable_context: 'field:node:CONTENT_TYPE_NAME:created'
+                      'field:node:CONTENT_TYPE_NAME:created':
+                        value:
+                          sources:
+                            - source_id: 'field_formatter:node:CONTENT_TYPE_NAME:created'
+                              source:
+                                type: timestamp
+                                label: hidden
+                                settings:
+                                  date_format: medium
+                                  custom_date_format: ''
+                                  timezone: ''
+                                third_party_settings: {  }
+                  - source_id: entity_field
+                    source:
+                      derivable_context: 'field:node:CONTENT_TYPE_NAME:MEDIA_FIELD_NAME'
+                      'field:node:CONTENT_TYPE_NAME:MEDIA_FIELD_NAME':
+                        value:
+                          sources:
+                            - source_id: 'field_formatter:node:CONTENT_TYPE_NAME:MEDIA_FIELD_NAME'
+                              source:
+                                type: image
+                                label: hidden
+                                settings:
+                                  image_link: ''
+                                  image_style: wide
+                                  image_loading:
+                                    attribute: lazy
+                                third_party_settings: {  }
+                  - source_id: entity_field
+                    source:
+                      derivable_context: 'field:node:CONTENT_TYPE_NAME:DESCRIPTION_FIELD_NAME'
+                      'field:node:CONTENT_TYPE_NAME:DESCRIPTION_FIELD_NAME':
+                        value:
+                          sources:
+                            - source_id: 'field_formatter:node:CONTENT_TYPE_NAME:DESCRIPTION_FIELD_NAME'
+                              source:
+                                type: text_default
+                                label: hidden
+                                settings: {  }
+                                third_party_settings: {  }
+id: node.CONTENT_TYPE_NAME.full
+targetEntityType: node
+bundle: CONTENT_TYPE_NAME
+mode: full
+content: {  }
+hidden: {  }

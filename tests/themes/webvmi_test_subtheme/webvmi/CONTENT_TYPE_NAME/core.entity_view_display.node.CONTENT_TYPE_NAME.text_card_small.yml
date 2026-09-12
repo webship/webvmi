@@ -1,0 +1,35 @@
+# Text card - small: the title in a box component of the theme.
+langcode: en
+status: true
+third_party_settings:
+  display_builder:
+    profile: default
+    sources:
+      - source_id: component
+        source:
+          component:
+            component_id: 'DEFAULT_ACTIVE_THEME:box'
+            variant_id: null
+            props: {  }
+            slots:
+              content:
+                sources:
+                  - source_id: entity_field
+                    source:
+                      derivable_context: 'field:node:CONTENT_TYPE_NAME:title'
+                      'field:node:CONTENT_TYPE_NAME:title':
+                        value:
+                          sources:
+                            - source_id: 'field_formatter:node:CONTENT_TYPE_NAME:title'
+                              source:
+                                type: string
+                                label: hidden
+                                settings:
+                                  link_to_entity: true
+                                third_party_settings: {  }
+id: node.CONTENT_TYPE_NAME.text_card_small
+targetEntityType: node
+bundle: CONTENT_TYPE_NAME
+mode: text_card_small
+content: {  }
+hidden: {  }

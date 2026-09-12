@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.featured_card_small
+label: 'Featured card - small'
+description: ''
+targetEntityType: node
+cache: true

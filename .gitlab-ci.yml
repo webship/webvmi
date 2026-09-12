@@ -1,0 +1,14 @@
+# https://git.drupalcode.org/project/gitlab_templates/
+include:
+  - project: $_GITLAB_TEMPLATES_REPO
+    ref: $_GITLAB_TEMPLATES_REF
+    file:
+      - "/includes/include.drupalci.main.yml"
+      - "/includes/include.drupalci.variables.yml"
+      - "/includes/include.drupalci.workflows.yml"
+
+variables:
+  # For now, build and test with Drupal 11.4 and PHP 8.4.
+  DRUPAL_CORE: "11.4.x-dev"
+  _TARGET_PHP: "8.4"
+  _PHPUNIT_CONCURRENT: "0"
