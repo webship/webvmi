@@ -1,0 +1,6 @@
+{
+    "name": "drupal/webvmi",
+    "type": "drupal-module",
+    "description": "Card view modes laid out with Display Builder.",
+    "license": "GPL-2.0-or-later"
+}
