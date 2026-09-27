@@ -27,6 +27,7 @@
     "drupal/ui_patterns": "^2.0"
   },
   "suggest": {
-    "drupal/ui_suite_uikit": "Lays the view modes out with the UIkit card, overlay, cover and article components."
+    "drupal/ui_suite_uikit": "Lays the view modes out with the UIkit card, overlay, cover and article components.",
+    "drupal/uikit_admin": "Lays the view modes out with the UIkit Admin card, for content shown in the administration theme."
   }
 }

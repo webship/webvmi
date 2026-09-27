@@ -48,6 +48,7 @@ final class ThemeTemplatesTest extends KernelTestBase {
     return [
       'UI Suite Bootstrap' => ['ui_suite_bootstrap'],
       'UI Suite DaisyUI' => ['ui_suite_daisyui'],
+      'UIkit Admin' => ['uikit_admin'],
     ];
   }
 

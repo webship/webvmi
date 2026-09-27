@@ -68,11 +68,16 @@ A template is a `core.entity_view_display` config file with Display Builder sour
 `CONTENT_TYPE_NAME`, `MEDIA_FIELD_NAME`, `DESCRIPTION_FIELD_NAME` and `DEFAULT_ACTIVE_THEME` are replaced when the
 template is applied.
 
+UIkit Admin, the administration theme, has a card but no overlay, cover or article component: its layouts use the
+card for every view mode, so content shown in the back office (dashboards, previews) keeps the UIkit look. Apply
+them with `drush webvmi:apply article --theme=uikit_admin`.
+
 The template of a view mode is taken from the first of these folders:
 
 1. For the default theme (or the `--theme` of the Drush commands), then each of its base themes:
    `webvmi/CONTENT_TYPE_NAME` in the theme, then `src/assets/config_templates/<theme>/CONTENT_TYPE_NAME` in this
-   module. UI Suite UIkit ships its layouts in the theme; this module ships layouts for the themes it knows.
+   module. UI Suite UIkit ships its layouts in the theme; this module ships layouts for the themes it knows:
+   UI Suite Bootstrap, UI Suite DaisyUI and UIkit Admin.
 2. The same folders for the theme it was generated from (the `generator` of its info file), with the component IDs
    renamed: a theme generated from UI Suite UIkit uses the UIkit layouts with its own components.
 3. `src/assets/config_templates/CONTENT_TYPE_NAME` in this module: the fields without components, for any theme.

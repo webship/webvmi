@@ -1,0 +1,71 @@
+# Text card - small. Card with a hover effect and small padding: h4 title, body trimmed to 100 characters.
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.text_card_small
+    - field.field.node.CONTENT_TYPE_NAME.DESCRIPTION_FIELD_NAME
+    - node.type.CONTENT_TYPE_NAME
+  module:
+    - display_builder
+    - text
+    - ui_patterns
+third_party_settings:
+  display_builder:
+    profile: default
+    sources:
+      - source_id: component
+        source:
+          component:
+            component_id: 'uikit_admin:card'
+            variant_id: null
+            props:
+              heading_level:
+                source_id: select
+                source:
+                  value: 4
+              hover:
+                source_id: checkbox
+                source:
+                  value: true
+              size:
+                source_id: select
+                source:
+                  value: small
+            slots:
+              title:
+                sources:
+                  - source_id: entity_field
+                    source:
+                      derivable_context: 'field:node:CONTENT_TYPE_NAME:title'
+                      'field:node:CONTENT_TYPE_NAME:title':
+                        value:
+                          sources:
+                            - source_id: 'field_formatter:node:CONTENT_TYPE_NAME:title'
+                              source:
+                                type: string
+                                label: hidden
+                                settings:
+                                  link_to_entity: true
+                                third_party_settings: {  }
+              content:
+                sources:
+                  - source_id: entity_field
+                    source:
+                      derivable_context: 'field:node:CONTENT_TYPE_NAME:DESCRIPTION_FIELD_NAME'
+                      'field:node:CONTENT_TYPE_NAME:DESCRIPTION_FIELD_NAME':
+                        value:
+                          sources:
+                            - source_id: 'field_formatter:node:CONTENT_TYPE_NAME:DESCRIPTION_FIELD_NAME'
+                              source:
+                                type: text_summary_or_trimmed
+                                label: hidden
+                                settings:
+                                  trim_length: 100
+                                third_party_settings: {  }
+id: node.CONTENT_TYPE_NAME.text_card_small
+targetEntityType: node
+bundle: CONTENT_TYPE_NAME
+mode: text_card_small
+content: {  }
+hidden: {  }
